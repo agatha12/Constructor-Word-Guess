@@ -6,6 +6,7 @@ var inquirer = require("inquirer")
 var remaining = 10
 var theword = new Words (randomAnswers)
 var score = []
+var guessed = []
 
 
 
@@ -29,7 +30,12 @@ var score = []
         var x = theword.word.includes(guess)
         // console.log(x)
         if (letters.includes(guess)){
-
+        if(guessed.includes(guess)){
+            console.log("\nYou already guessed that letter")
+            makeAguess()
+        }
+        else{
+            guessed.push(guess)
         if(x){
             console.log("\nCorrect")
             checkWin()
@@ -46,6 +52,7 @@ var score = []
             }
         }
     }
+}
     else{
         console.log("\nThat was not a letter")
         makeAguess()

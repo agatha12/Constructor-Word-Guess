@@ -10,12 +10,11 @@ var Letters = function(letter){
         }
     }
     this.check = function(a){
-        // console.log(a)
+     
         if(this.guessed){
             this.toString()
         }   
-        else{    // console.log(a)
-        // console.log(this.letter)
+        else{    
         if (a === this.letter){
             
             this.guessed = true
@@ -30,6 +29,5 @@ var Letters = function(letter){
     }
 }
 
-// var b = new letter ("b")
-// b.check("a")
+
 module.exports = Letters;
